@@ -1,0 +1,108 @@
+Dziedziczenie is-a
+
+class Samochod {}
+class Limuzyna extends Samochod {}
+
+Kompozycja has-a
+
+class Kolo {}
+class Samochod {
+	Kolo[] kolo;
+}
+
+Klasa abstrakcyjna
+
+abstract class Samochod {
+	public void hamuje () {
+		// ...
+	}
+
+	abstract public void trabi(); //deklaracja metody
+}
+
+class Limuzyna extends Samochod {
+	// Dziedziczy hamuje
+	
+	@Override
+	public void trabi() {
+		// Implementacja trabi
+	}
+}
+
+Interfejs - Same deklaracje, bez implementacji
+
+public interface Figura {
+	public float obliczObwod();
+	public float obliczPowierzchnie();
+}
+
+class Kwadrat implements Figura {
+	private float a;
+
+    	public Kwadrat(float a) {
+        	this.a = a;
+    	}
+
+	@Override
+    	public float obliczObwod() {
+        	return 4 * a;
+    	}
+
+   	 @Override
+    	public float obliczPowierzchnie() {
+        	return a * a;
+    	}
+}
+
+Klasa wewnętrzna
+
+class Elektronarzedzie extends SprzetBase {
+	class ModulZasilania{
+        	void sprawdzBaterie(){
+            		System.out.println("Zasilanie OK");
+        	}
+    	}
+}
+
+Elektronarzedzie szlifierka = new Elektronarzedzie();
+Elektronarzedzie.ModulZasilania modul = szlifierka.new ModulZasilania();
+modul.sprawdzBaterie();
+
+Klasa anonimowa
+
+interface Powitanie {
+	void sayHello();
+}
+
+
+Powitanie powitanie = new Powitanie(){
+	@Override
+	public void sayHello() {
+		System.out.printlf("Hello");
+	}
+}
+
+powitanie.sayHello(); // Deklaracja klasy nie istnieje, mimo to ją utworzyliśmy
+
+Polimorfizm
+
+public class Punkt2D {
+	protected float x, y;
+
+	public Punkt2D(float x, float y) {
+        	this.x = x;
+        	this.y = y;
+    	}
+}
+
+public class Punkt3D extends Punkt2D {
+	protected float z;
+
+	public Punkt3D(float x, float y, float z) {
+		super(x, y);
+		this.z = z;
+	}
+}
+
+Punkt2D punkt2D = new Punkt2D(10, 20);
+Punkt2D punkt3D = new Punkt3D(10, 20, 30);
