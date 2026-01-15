@@ -39,29 +39,29 @@ public interface Figura {
 class Kwadrat implements Figura {
 	private float a;
 
-    	public Kwadrat(float a) {
-        	this.a = a;
-    	}
+    public Kwadrat(float a) {
+        this.a = a;
+    }
 
 	@Override
-    	public float obliczObwod() {
-        	return 4 * a;
-    	}
+    public float obliczObwod() {
+    	return 4 * a;
+	}
 
    	 @Override
-    	public float obliczPowierzchnie() {
-        	return a * a;
-    	}
+    public float obliczPowierzchnie() {
+    	return a * a;
+    }
 }
 
 Klasa wewnętrzna
 
 class Elektronarzedzie extends SprzetBase {
 	class ModulZasilania{
-        	void sprawdzBaterie(){
-            		System.out.println("Zasilanie OK");
-        	}
-    	}
+		void sprawdzBaterie(){
+				System.out.println("Zasilanie OK");
+		}
+    }
 }
 
 Elektronarzedzie szlifierka = new Elektronarzedzie();
@@ -90,9 +90,9 @@ public class Punkt2D {
 	protected float x, y;
 
 	public Punkt2D(float x, float y) {
-        	this.x = x;
-        	this.y = y;
-    	}
+		this.x = x;
+		this.y = y;
+	}
 }
 
 public class Punkt3D extends Punkt2D {
